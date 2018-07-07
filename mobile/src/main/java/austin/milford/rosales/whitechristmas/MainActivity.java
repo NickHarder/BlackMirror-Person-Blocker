@@ -7,7 +7,6 @@ import android.widget.TextView;
 import android.hardware.camera2.CameraManager;
 
 public class MainActivity extends Activity {
-    CameraManager CM = this.getSystemService(CameraManager.class);
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -22,11 +21,18 @@ public class MainActivity extends Activity {
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
 
-        String[] idList = CM.getCameraIdList();
-        String text = "";
-        for (int i = 0; i < idList.length; i++) {
-            text = text + idList[i]; }
-        tv.setText(text);
+        CameraManager CM = this.getSystemService(CameraManager.class);
+
+        String[] idList = {};
+        try {
+            idList = CM.getCameraIdList();
+            String text = "";
+            for (int i = 0; i < idList.length; i++) {
+                text = text + idList[i] + "|"; }
+            tv.setText(text);
+        } catch (android.hardware.camera2.CameraAccessException e) {
+            System.err.println("CameraAccessException: " + e.getMessage());
+        }
     }
 
     /**

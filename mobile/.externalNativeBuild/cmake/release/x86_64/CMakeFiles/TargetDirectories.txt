@@ -1,0 +1,3 @@
+D:/loker/Documents/HackMobile 2018/mobile/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/native-lib.dir
+D:/loker/Documents/HackMobile 2018/mobile/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/edit_cache.dir
+D:/loker/Documents/HackMobile 2018/mobile/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir
